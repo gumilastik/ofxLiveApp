@@ -24,12 +24,7 @@ private:
 };
 #endif
 
-#if defined(TARGET_WIN32)
 class ofxLiveApp : public ofBaseApp {
-#elif defined(TARGET_OSX)
-class ofxLiveApp : public ofBaseApp, public jet::ILiveListener {
-#endif
-
 #if defined(TARGET_WIN32)
 #elif defined(TARGET_OSX)
 	bool needReload;
