@@ -2,8 +2,8 @@
 
 Live coding for openFrameworks! Magic!
 
-For OSX used [jet-live](https://github.com/ddovod/jet-live)
-For Windows used [blink](https://github.com/crosire/blink)
+* For OSX used [jet-live](https://github.com/ddovod/jet-live)
+* For Windows used [blink](https://github.com/crosire/blink)
 
 ## SETUP
 
