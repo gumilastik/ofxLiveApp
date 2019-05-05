@@ -29,7 +29,7 @@ class ofxLiveApp : public ofBaseApp {
 #elif defined(TARGET_OSX)
 	bool needReload;
 	std::unique_ptr<jet::Live> live;
-	std::unique_ptr<ILiveListener> listener;
+	std::unique_ptr<jet::ILiveListener> listener;
 #endif
 
 public:
