@@ -8,11 +8,11 @@ Live coding for openFrameworks! Magic!
 ## SETUP
 
 1.	* **OSX**:
-		- Run in project dir for the first time: 
+		- Install xcpretty: 
           ```
           gem install xcpretty  
           ```
-		- Then and every time the project structure changes:
+		- Run in the project directory for the first time (and each time the project structure changes):
           ```
           xcodebuild -project PROJECT_NAME.xcodeproj | xcpretty -r json-compilation-database --output compile_commands.json
           ```
