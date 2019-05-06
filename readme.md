@@ -1,4 +1,3 @@
-
 # ofxLiveApp
 
 Live coding for openFrameworks! Magic!
@@ -8,16 +7,20 @@ Live coding for openFrameworks! Magic!
 
 ## SETUP
 
-1.	* OSX:
-		- run in project dir: 
+1.	* **OSX**:
+		- Run in project dir for the first time: 
           ```
           gem install xcpretty  
+          ```
+		- Then and every time the project structure changes:
+          ```
           xcodebuild -project PROJECT_NAME.xcodeproj | xcpretty -r json-compilation-database --output compile_commands.json
           ```
-	* WIN:
-		- add props file from addon to your project
-		- use x64 build
+          Change PROJECT_NAME to the name of your project
+	* **WIN**:
+		- Add props file from addon to your project (via the "Property Manager" window in Visual Studio)
+		- Use x64 build
 
-2. Inherit your main app from `ofxLiveApp` instead of `ofApp` class
-3. `ofxLiveApp` add new virtual function `void reinit();` to your app. 
+2. Inherit your main app from `ofxLiveApp` (instead of `ofApp` class)
+3. `ofxLiveApp` add new function `void reinit();` to your app. 
 This function is called after changes are loaded, so you can reinit your objects (if necessary)
