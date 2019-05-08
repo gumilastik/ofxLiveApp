@@ -27,7 +27,7 @@ private:
 class ofxLiveApp : public ofBaseApp {
 #if defined(TARGET_WIN32)
 #elif defined(TARGET_OSX)
-	bool needReload;
+	bool filesRecompiled;
 	std::unique_ptr<jet::Live> live;
 	std::unique_ptr<jet::ILiveListener> listener;
 #endif

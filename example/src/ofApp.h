@@ -6,6 +6,7 @@
  
 class ofApp : public ofxLiveApp {
 	vector<Particle> particles;
+	float timeLastUpdate;
 
 public:
 	void setup();

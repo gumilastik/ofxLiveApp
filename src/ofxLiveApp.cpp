@@ -53,13 +53,17 @@ ofxLiveApp::ofxLiveApp()
 	STARTUPINFOA si = { 0 };
 	PROCESS_INFORMATION pi = { 0 };
 
+#if defined(_WIN64)
 	string blink = "blink.exe";
+#else
+	string blink = "blink_x86.exe";
+#endif
 	string cmd = blink + " " + ofToString(GetCurrentProcessId());
 
 	BOOL res = CreateProcessA(blink.c_str(), (char*)cmd.c_str(), NULL, NULL, NULL, 0, NULL, NULL, &si, &pi);
 
 #elif defined(TARGET_OSX)
-	needReload = false;
+	filesRecompiled = false;
 
 	jet::LiveConfig config;
 	config.workerThreadsCount = 2;
@@ -97,13 +101,13 @@ void ofxLiveApp::__sync(ofEventArgs &args)
 #elif defined(TARGET_OSX)
 	live->update();
 	if (live->getStatus().compilingFiles.size() == 0) {
-		if (needReload) {
+		if (filesRecompiled) {
 			live->tryReload();
-			needReload = false;
+			filesRecompiled = false;
 		}
 	}
 	else {
-		needReload = true;
+		filesRecompiled = true;
 	}
 #endif
 }

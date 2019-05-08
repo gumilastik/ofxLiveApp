@@ -4,12 +4,16 @@
 void ofApp::setup() {
 	ofSetFrameRate(60);
 
+	timeLastUpdate = 0.0;
+
 	reinit();
 }
 
 //--------------------------------------------------------------
 void ofApp::reinit() {
 	cout << "reinit" << endl;
+
+	timeLastUpdate = ofGetElapsedTimef();
 
 	// change this
 	particles.resize(200);
@@ -33,6 +37,8 @@ void ofApp::draw() {
 	ofPopStyle();
 
 	ofDrawBitmapStringHighlight(ofToString(ofGetFrameRate()), 10, 20);
+
+	ofDrawBitmapStringHighlight("app updated...", 10, ofMap(ofGetElapsedTimef(), timeLastUpdate, timeLastUpdate + 1.0, 20, -10, true), ofColor::black, ofColor::red);
 }
 
 //--------------------------------------------------------------

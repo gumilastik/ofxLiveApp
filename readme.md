@@ -14,7 +14,6 @@ Live coding for openFrameworks! Magic!
           ```
 	* **WIN**:
 		- Add props file from addon to your project (via the "Property Manager" window in Visual Studio)
-		- Use x64 build
 
 2. Inherit your main app from `ofxLiveApp` (instead of `ofBaseApp` class)
 3. `ofxLiveApp` add new function `void reinit();` to your app. 
