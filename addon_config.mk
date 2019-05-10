@@ -12,8 +12,8 @@ common:
     ADDON_SOURCES_EXCLUDE += libs/utils/%
 
 vs:
-	ADDON_DLLS_TO_COPY = bin/blink.exe
-	ADDON_DLLS_TO_COPY = bin/blink_x86.exe
+    ADDON_DLLS_TO_COPY += bin/blink.exe
+    ADDON_DLLS_TO_COPY += bin/blink_x86.exe
 
 osx:
     ADDON_CFLAGS += -O0
