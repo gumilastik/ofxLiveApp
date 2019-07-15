@@ -12,7 +12,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OptimizeReferences>false</OptimizeReferences>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalOptions>/DEBUG /OPT:NOREF /LTCG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>%(AdditionalOptions) /DEBUG /OPT:NOREF /LTCG /ZI</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />
