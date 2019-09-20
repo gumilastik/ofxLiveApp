@@ -60,7 +60,7 @@ ofxLiveApp::ofxLiveApp()
 #endif
 	string cmd = blink + " " + ofToString(GetCurrentProcessId());
 
-	BOOL res = CreateProcessA(blink.c_str(), (char*)cmd.c_str(), NULL, NULL, NULL, 0, NULL, NULL, &si, &pi);
+	BOOL res = CreateProcessA(blink.c_str(), (char*)cmd.c_str(), NULL, NULL, NULL, 0, NULL, filesystem::current_path().string().c_str(), &si, &pi);
 
 #elif defined(TARGET_OSX)
 	filesRecompiled = false;
